@@ -1,0 +1,18 @@
+Subject: URGENT: Action Required - Mandatory Security Update
+From: IT Security Department <security-admin@update-portal-verify.com>
+Date: Wed, 18 Mar 2026 10:00:00 +0000
+
+Dear Employee,
+
+We have detected unusual sign-in activity on your corporate account. To prevent immediate account suspension, you must verify your identity.
+
+Please click the secure link below to update your password credentials:
+http://verification-portal-internal.login-secure-auth.com/login
+
+Please also review the attached document for the security policy update.
+Attachment: Security_Policy_Update.pdf.exe
+
+Failure to comply within 24 hours will result in a complete account lockout.
+
+Thank you,
+IT Support Team

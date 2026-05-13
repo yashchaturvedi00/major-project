@@ -1,0 +1,10 @@
+venv/
+.venv/
+node_modules/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+datasets/
+dist/
+build/
+.env

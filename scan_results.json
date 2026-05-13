@@ -1,0 +1,50 @@
+[
+  {
+    "file_name": "sample_network_traffic.csv",
+    "file_path": "C:\\Users\\yashc\\Downloads\\sample_network_traffic.csv",
+    "status": "scanned",
+    "attack_type": "Command & Scripting Interpreter",
+    "confidence": 90.54,
+    "severity": "High",
+    "mitre_id": "T1059",
+    "mitre_name": "Command and Scripting Interpreter",
+    "category": "Execution",
+    "impact": "Remote code execution, system compromise, lateral movement",
+    "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries.",
+    "mitigation": "Restrict script execution policies, monitor command-line activity, use application whitelisting, disable unused scripting engines.",
+    "detection_method": "Monitor process creation, command-line arguments, script execution logs, and unusual interpreter usage.",
+    "timestamp": "2026-05-10 00:30:00"
+  },
+  {
+    "file_name": "demo_attack_script.txt",
+    "file_path": "C:\\Users\\yashc\\Downloads\\demo_attack_script.txt",
+    "status": "scanned",
+    "attack_type": "OS Credential Dumping",
+    "confidence": 33.35,
+    "severity": "Low",
+    "mitre_id": "T1003",
+    "mitre_name": "OS Credential Dumping",
+    "category": "Credential Access",
+    "impact": "Credential access, lateral movement, privilege escalation",
+    "description": "Adversaries may attempt to dump credentials from the operating system to obtain account login credentials.",
+    "mitigation": "Credential Guard, restrict access to LSASS, disable WDigest, use Protected Users group, limit admin privileges.",
+    "detection_method": "Monitor access to LSASS process, SAM registry hive, NTDS.dit, and credential-related API calls.",
+    "timestamp": "2026-05-09 23:49:00"
+  },
+  {
+    "file_name": "demo_phishing_email.txt",
+    "file_path": "C:\\Users\\yashc\\Downloads\\demo_phishing_email.txt",
+    "status": "scanned",
+    "attack_type": "Phishing",
+    "confidence": 63.47,
+    "severity": "Medium",
+    "mitre_id": "T1566",
+    "mitre_name": "Phishing",
+    "category": "Initial Access",
+    "impact": "Initial access, credential theft, malware delivery",
+    "description": "Adversaries may send phishing messages to gain access to victim systems, often via malicious attachments or links.",
+    "mitigation": "User training, email filtering, URL scanning, multi-factor authentication, sandboxing attachments.",
+    "detection_method": "Monitor email gateways, analyze URLs and attachments, track user click behavior on suspicious links.",
+    "timestamp": "2026-03-19 00:23:12"
+  }
+]

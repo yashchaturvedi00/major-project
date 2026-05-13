@@ -1,0 +1,118 @@
+﻿python : Traceback 
+(most recent call 
+last):
+At line:1 char:1
++ python -m 
+scripts.train_model 
+2>&1 | Out-File 
+-FilePath 
+tmp_train_out ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Traceback    
+ (most recent call    
+ last)::String) [    
+], RemoteExceptio    n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+  File "<frozen 
+runpy>", line 198, in 
+_run_module_as_main
+  File "<frozen 
+runpy>", line 88, in 
+_run_code
+  File "C:\Users\yashc
+\Downloads\MajorProjec
+t\scripts\train_model.
+py", line 309, in 
+<module>
+    print(f"  \u2705 
+Model trained 
+successfully!")
+  File "C:\Users\yashc
+\AppData\Local\Program
+s\Python\Python311\Lib
+\encodings\cp1252.py",
+ line 19, in encode
+    return codecs.char
+map_encode(input,self.
+errors,encoding_table)
+[0]
+           ^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+2: character maps to 
+<undefined>
+============================================================
+  ATTACK CLASSIFICATION MODEL TRAINING
+  Target: 8 Specific Attack Categories
+============================================================
+
+[1/7] Loading dataset...
+  Total samples: 14133
+
+[2/7] Mapping to 8 target attack categories...
+  Samples matching target categories: 4798
+  Category distribution:
+    Command & Scripting Interpreter: 1692
+    Phishing: 899
+    Insider Threat: 809
+    DDoS: 630
+    Shoulder Surfing: 277
+    OS Credential Dumping: 175
+    Brute Force: 169
+    Masquerading: 147
+
+[3/7] Extracting TF-IDF features from text...
+  TF-IDF matrix shape: (4798, 15000) (word + char n-grams)
+
+[4/7] Encoding labels...
+  Number of classes: 8
+    [0] Brute Force
+    [1] Command & Scripting Interpreter
+    [2] DDoS
+    [3] Insider Threat
+    [4] Masquerading
+    [5] OS Credential Dumping
+    [6] Phishing
+    [7] Shoulder Surfing
+
+[5/7] Training model...
+
+[6/7] Evaluating model...
+
+  Training Accuracy: 100.00%
+  Testing Accuracy:  77.60%
+  Cross-Val Accuracy: 63.03% (+/- 4.80%)
+
+  Classification Report:
+                                 precision    recall  f1-score   support
+
+                    Brute Force       0.60      0.26      0.37        34
+Command & Scripting Interpreter       0.78      0.86      0.82       339
+                           DDoS       0.82      0.84      0.83       126
+                 Insider Threat       0.78      0.85      0.81       162
+                   Masquerading       0.73      0.38      0.50        29
+          OS Credential Dumping       0.54      0.37      0.44        35
+                       Phishing       0.78      0.78      0.78       180
+               Shoulder Surfing       0.76      0.67      0.71        55
+
+                       accuracy                           0.78       960
+                      macro avg       0.72      0.63      0.66       960
+                   weighted avg       0.77      0.78      0.77       960
+
+
+[7/7] Saving model artifacts...
+  Saved: attack_model.pkl, label_encoder.pkl
+  Saved: tfidf_vectorizer.pkl, tfidf_char_vectorizer.pkl
+  Saved: attack_to_mitre_map.pkl, mitre_kb.pkl
+
+============================================================
